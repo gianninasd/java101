@@ -1,3 +1,5 @@
+package com.paysafe;
+
 /**
  * Simplest java application in the universe
  */
