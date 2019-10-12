@@ -4,9 +4,9 @@ Contains various applications to teach Java
 
 ## Included Applications
 * Sample 1
-  * Simplest java application in the universe
+  * Simplest java application in the universe, execute `run from within IDE`
 * Sample 2
-  * Processes a given file
+  * Processes a given file, execute `sample2.bat <path>\<filename>.csv`
 
 ## References
 Below are some reference web sites

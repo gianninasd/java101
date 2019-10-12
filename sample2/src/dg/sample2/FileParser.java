@@ -11,6 +11,8 @@ import java.util.List;
  */
 public class FileParser {
 
+  private static final String URL_FILE_PREFIX = "file:///";
+
   public static void main(String [] args) {
     System.out.println("\n////////// SAMPLE 2 //////////");
 
@@ -31,7 +33,7 @@ public class FileParser {
 
     List<String> lines;
     try {
-      lines = Files.readAllLines(Paths.get(new URL("file:///f:\\dev\\java101\\sample2.csv").toURI()));
+      lines = Files.readAllLines(Paths.get(new URL(URL_FILE_PREFIX + fileName).toURI()));
       Iterator<String> it = lines.iterator();
       System.out.println("Number of records: " + lines.size());
 
