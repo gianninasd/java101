@@ -1,2 +1,5 @@
 # folders to ignore
 out
+
+# files to ignore
+*.log
