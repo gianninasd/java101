@@ -25,7 +25,7 @@ public class FileParser {
     FileParser parser = new FileParser();
 
     if( args.length == 0 ) {
-      logger.info("Filename missing as argument");
+      logger.warning("Filename missing as argument");
     }
     else {
       parser.processFile( args[0] );
@@ -61,7 +61,7 @@ public class FileParser {
       logger.info("Total records parsed: " + PaymentRecord.totalCount);
     }
     catch (Exception e) {
-      logger.info("Unable to read file: " + e);
+      logger.severe("Unable to read file: " + e);
       e.printStackTrace();
     }
   }
