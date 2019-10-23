@@ -8,6 +8,7 @@ Contains various applications to teach Java
 * Sample 2
   * Processes a given file, execute `sample2.bat <path>\<filename>.csv`
 * Sample 3
+  * Demonstrates inheritance and polymorphism
   * Processes a given file and logs to a file, execute `sample3.bat <path>\<filename>.csv`
 
 ## References
