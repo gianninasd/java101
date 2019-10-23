@@ -20,6 +20,7 @@ public class PaymentRecord {
   private String lastName;
   private String email;
   private String postalCode;
+  private String countryCode;
 
   /**
    * Returns a string representation of this object
@@ -58,6 +59,7 @@ public class PaymentRecord {
         case 6: paymentRecord.setLastName(token); break;
         case 7: paymentRecord.setEmail(token); break;
         case 8: paymentRecord.setPostalCode(token); break;
+        case 9: paymentRecord.setCountryCode(token); break;
       }
 
       tokenPosition++;
@@ -138,5 +140,13 @@ public class PaymentRecord {
 
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
+  }
+
+  public String getCountryCode() {
+    return countryCode;
+  }
+
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
   }
 }

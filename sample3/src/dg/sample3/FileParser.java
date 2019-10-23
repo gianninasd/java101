@@ -1,5 +1,9 @@
 package dg.sample3;
 
+import dg.sample3.processor.DJNProcessor;
+import dg.sample3.processor.Processor;
+import dg.sample3.processor.TSYSProcessor;
+
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -43,6 +47,7 @@ public class FileParser {
     List<String> lines;
     String line;
     PaymentRecord rec;
+    Processor processor;
 
     try {
       lines = Files.readAllLines(Paths.get(new URL(URL_FILE_PREFIX + fileName).toURI()));
@@ -55,6 +60,8 @@ public class FileParser {
         if( line != null && line != "" && line.length() != 0 ) {
           rec = PaymentRecord.parse( line );
           logger.info("rec: " + rec);
+          processor = getProcessor( rec.getCountryCode() );
+          processor.send( rec );
         }
       }
 
@@ -63,6 +70,18 @@ public class FileParser {
     catch (Exception e) {
       logger.severe("Unable to read file: " + e);
       e.printStackTrace();
+    }
+  }
+
+  /**
+   * Returns the appropriate processor based on the customer country code
+   */
+  private Processor getProcessor( String countryCode ) {
+    if( "US".equals(countryCode) ) {
+      return new TSYSProcessor();
+    }
+    else {
+      return new DJNProcessor();
     }
   }
 }
