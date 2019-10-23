@@ -1,6 +1,6 @@
 Java 101
 ========
-Contains various applications to teach Java
+Contains various applications to teach Java basics. Project can be imported directly into Intellij IDEA for build and execution.
 
 ## Included Applications
 * Sample 1
